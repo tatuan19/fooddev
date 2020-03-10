@@ -1,0 +1,35 @@
+*{
+	margin: 0;
+	padding: 0;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.slider{
+    width:100vw;
+    height: 100vh;
+    margin: 100px auto;
+    background: url(../Images/img1.png);
+    animation: sli-ani;
+    animation-duration: 50s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+@keyframes sli-ani{
+    25%{
+        background: url(../Images/img2.png);
+    }
+    50%{
+        background: url(../Images/img3.jpg);
+    }
+    75%{
+        background: url(../Images/img4.jpg);
+    }
+    100%{
+        background: url(../Images/img5.png);
+    }
+}
