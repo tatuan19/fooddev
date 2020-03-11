@@ -65,37 +65,38 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
-  _addtoCart = (item, quantity, event) => {
-    event.preventDefault();
-    const username = localStorage.getItem('username');
-    if (username) {
-      axios.post('/cart/add', {
-        username: username,
-        productID: item.ProductID,
-        quantity: quantity,
-        name: item.Name,
-        image: item.Image
-      })
-        .then(response => {
-          console.log(response.data.success)
-        })
-        .catch(err => console.log(err));
-      axios.get(`/cart/${localStorage.getItem('username')}`)
+_addtoCart = (item, quantity, event) => {
+  event.preventDefault();
+  const username = localStorage.getItem('username');
+  if (username) {
+    axios.post('/cart/add', {
+      username: username,
+      productID: item.ProductID,
+      quantity: quantity,
+      name: item.Name,
+      image: item.Image
+    })
+      .then(response => {
+        console.log(response.data.success)
+        axios.get(`/cart/${localStorage.getItem('username')}`)
         .then(data => {
           this.setState({
             products: data.data.data
           })
         })
         .catch(err => console.log(err));
-        this.setState({
-          count: this.state.count + quantity,
-          Total: this.state.Total + item.Price*quantity
-        })
-    }
-    else {
-      alert('You must log in first');
-    }
+      })
+      .catch(err => console.log(err));
+      this.setState({
+        count: this.state.count + quantity,
+        Total: this.state.Total + item.Price*quantity
+      })
+      console.log(this.state)
   }
+  else {
+    alert('You must log in first');
+  }
+}
 
   Decrease = (item,event) => {
     event.preventDefault();
