@@ -406,6 +406,7 @@ input[type=number] {
     color: coral;
     /* margin-left: 10px; */
     vertical-align: middle;
+    text-align: center;
 }
 
 .cart-price span{
@@ -416,7 +417,7 @@ input[type=number] {
 .cart-quantity{
     align-self: center;
     width: 20%;
-    padding: 0 50px 0 60px;
+    /* padding: 0 50px 0 60px; */
 }
 .cart-remove{
     width: 15%;
@@ -425,8 +426,10 @@ input[type=number] {
 }
 .quantity-sub{
     display: flex;
+    justify-content: center;
 }
 .quantity-sub input{
+    display: inline-block;
     width: 28%;
     height: 35px;
     border: 2px solid gray;

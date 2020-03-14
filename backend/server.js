@@ -16,8 +16,8 @@ const isLoggedIn = require('./middleware/checkLogIn');
 const isAdmin = require('./middleware/checkPermission');
 
 const config = {
-    user: 'csdl',
-    password: '123456',
+    user: 'sa',
+    password: '0869050832',
     server: 'localhost',
     database: 'WebCSDL',
 };

@@ -50,10 +50,17 @@
 .trending-header{
     margin-top: 120px;
     text-align: center;
+    
 }
 .trending-header h1{
     font-size: 40px;
     font-weight: bold;
+    display: inline-block;
+    padding: 1rem;
+    background-color: #F9B129;
+    color: white;
+    margin-top: 5rem;
+    border-bottom: solid red 5px;
 }
 .trending-item-container{
     /* opacity: 0;
@@ -96,6 +103,19 @@
 .trending-item:hover .trending-item-img img{
     transform: scale(1.05);
     transition-duration: 0.7s;
+    animation: item-hover 1s ;
+    animation-fill-mode: forwards;
+}
+
+@keyframes item-hover{
+    from{
+        border: 0;
+        border-radius: 0;
+    }
+    to{
+        border: solid  white 0px;
+        border-radius: 50%;
+    }
 }
 .trending-item:hover .trending-item-expand{
     background: transparent;
